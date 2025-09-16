@@ -48,7 +48,7 @@ export function Footer() {
               <h3 className="font-medium mb-4">Connect</h3>
               <div className="flex space-x-4">
                 <a 
-                  href="https://github.com" 
+                  href="https://github.com/hanapiko" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors"
@@ -56,7 +56,7 @@ export function Footer() {
                   <Github size={16} />
                 </a>
                 <a 
-                  href="https://linkedin.com" 
+                  href="https://www.linkedin.com/in/hannah-juma-831195300/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors"
@@ -64,7 +64,7 @@ export function Footer() {
                   <Linkedin size={16} />
                 </a>
                 <a 
-                  href="mailto:alex@example.com"
+                  href="apikojuma94@gmail.com"
                   className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors"
                 >
                   <Mail size={16} />
@@ -79,7 +79,7 @@ export function Footer() {
               © {currentYear} Hannah Apiko. All rights reserved.
             </p>
             <p className="text-primary-foreground/60 text-sm flex items-center">
-              Made with <Heart className="mx-1 h-3 w-3 text-accent" fill="currentColor" /> using React & Tailwind CSS
+              Made using React & Tailwind CSS
             </p>
           </div>
         </div>

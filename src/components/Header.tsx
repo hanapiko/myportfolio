@@ -26,13 +26,14 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            {['about', 'skills', 'projects', 'contact'].map((item) => (
+            {['about', 'skills', 'projects', 'designs', 'contact'].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}
-                className="text-muted-foreground hover:text-foreground transition-colors capitalize"
+                className="relative text-muted-foreground hover:text-foreground transition-all duration-300 capitalize group hover:scale-105 py-2 px-3 rounded-md hover:bg-accent/10"
               >
                 {item}
+                <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
               </button>
             ))}
           </nav>
@@ -52,13 +53,14 @@ export function Header() {
         {isMenuOpen && (
           <nav className="md:hidden mt-4 pb-4 border-t border-border pt-4">
             <div className="flex flex-col space-y-4">
-              {['about', 'skills', 'projects', 'contact'].map((item) => (
+              {['about', 'skills', 'projects', 'designs', 'contact'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item)}
-                  className="text-muted-foreground hover:text-foreground transition-colors capitalize text-left"
+                  className="relative text-muted-foreground hover:text-foreground transition-all duration-300 capitalize text-left group py-2 px-3 rounded-md hover:bg-accent/10 hover:translate-x-2"
                 >
                   {item}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
                 </button>
               ))}
             </div>

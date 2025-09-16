@@ -111,7 +111,7 @@ export function Contact() {
                       <Label htmlFor="firstName">First Name</Label>
                       <Input 
                         id="firstName"
-                        placeholder="John"
+                        placeholder="Winnie"
                         className="mt-1"
                       />
                     </div>
@@ -119,7 +119,7 @@ export function Contact() {
                       <Label htmlFor="lastName">Last Name</Label>
                       <Input 
                         id="lastName"
-                        placeholder="Doe"
+                        placeholder="Ann"
                         className="mt-1"
                       />
                     </div>
@@ -130,7 +130,7 @@ export function Contact() {
                     <Input 
                       id="email"
                       type="email"
-                      placeholder="john@example.com"
+                      placeholder="abc@example.com"
                       className="mt-1"
                     />
                   </div>

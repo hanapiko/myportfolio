@@ -1,7 +1,49 @@
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "./ui/button";
+import { useState, useEffect } from "react";
 
 export function Hero() {
+  const [displayedFirstName, setDisplayedFirstName] = useState("");
+  const [displayedLastName, setDisplayedLastName] = useState("");
+  const [showCursor, setShowCursor] = useState(true);
+  const firstName = "Hannah";
+  const lastName = "Apiko";
+  
+  useEffect(() => {
+    const typewriterCycle = () => {
+      setDisplayedFirstName("");
+      setDisplayedLastName("");
+      setShowCursor(true);
+      
+      let index = 0;
+      const firstNameTimer = setInterval(() => {
+        if (index < firstName.length) {
+          setDisplayedFirstName(firstName.slice(0, index + 1));
+          index++;
+        } else {
+          clearInterval(firstNameTimer);
+          setTimeout(() => {
+            let lastIndex = 0;
+            const lastNameTimer = setInterval(() => {
+              if (lastIndex < lastName.length) {
+                setDisplayedLastName(lastName.slice(0, lastIndex + 1));
+                lastIndex++;
+              } else {
+                clearInterval(lastNameTimer);
+                setShowCursor(false);
+              }
+            }, 150);
+          }, 300);
+        }
+      }, 150);
+    };
+    
+    typewriterCycle();
+    const cycleInterval = setInterval(typewriterCycle, 10000);
+    
+    return () => clearInterval(cycleInterval);
+  }, []);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -17,13 +59,18 @@ export function Hero() {
             {/* Left Column - Content */}
             <div className="text-left">
               <h1 className="text-5xl md:text-7xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">Hannah</span>
+                <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+                  {displayedFirstName}
+                </span>
                 <br />
-                <span className="text-foreground">Apiko</span>
+                <span className="text-foreground">
+                  {displayedLastName}
+                  {showCursor && <span className="animate-pulse">|</span>}
+                </span>
               </h1>
               
               <div className="flex flex-wrap gap-2 mb-6">
-                <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm">Software Developer</span>
+                <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm">Full-stack Developer</span>
                 <span className="px-4 py-2 bg-accent/10 text-accent rounded-full text-sm">UI/UX Designer</span>
                 <span className="px-4 py-2 bg-secondary/50 text-primary rounded-full text-sm">Frontend Developer</span>
               </div>
